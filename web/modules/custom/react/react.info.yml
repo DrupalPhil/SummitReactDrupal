@@ -1,0 +1,5 @@
+name: 'React Components'
+type: module
+description: 'Responsible for everything React related'
+core: 8.x
+package: 'Custom'

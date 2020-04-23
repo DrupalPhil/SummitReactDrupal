@@ -1,0 +1,32 @@
+#bootstrap-external:
+#  version: VERSION
+#  css:
+#    theme:
+#      https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css: {type: external, minified: true}
+#  js:
+##    https://code.jquery.com/jquery-3.4.1.slim.min.js: {type: external, minified: true} # causes jquery issues
+#    https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js: {type: external, minified: true}
+#    https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js: {type: external, minified: true}
+#  dependencies:
+#    - core/jquery.once
+#    - core/jquery
+
+summit:
+  version: VERSION
+  css:
+    theme:
+      css/styles.css: {}
+  dependencies:
+    - summit/fontawesome
+#    - summit/swiper
+
+fontawesome:
+  version: VERSION
+  js:
+    https://kit.fontawesome.com/c631061718.js: {type: external, minified: true}
+
+#swiper:
+#  version: VERSION
+#  css:
+#    theme:
+#      https://unpkg.com/swiper/css/swiper.min.css: {type: external, minified: true}

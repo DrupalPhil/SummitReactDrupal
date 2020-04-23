@@ -1,0 +1,22 @@
+services:
+  summit_python.queue_redfin_properties:
+    class: Drupal\summit_python\Services\QueueRedfinPropertiesService
+    arguments: ['@http_client', '@queue']
+  summit_python.queue_zillow_rentals:
+    class: Drupal\summit_python\Services\QueueZillowRentalsService
+    arguments: ['@http_client', '@queue']
+  summit_python.process_redfin_property:
+    class: Drupal\summit_python\Services\ProcessRedfinPropertyService
+    arguments: ['@http_client']
+  summit_python.process_zillow_rental:
+    class: Drupal\summit_python\Services\ProcessZillowRentalService
+    arguments: ['@http_client']
+  summit_python.geocode_entity:
+    class: Drupal\summit_python\Services\GeocodeEntityService
+    arguments: ['@geocoder']
+  summit_python.scrapy:
+    class: Drupal\summit_python\Services\ScrapyService
+    arguments: ['@http_client', '@config.factory']
+  logger.channel.summit_python:
+    parent: logger.channel_base
+    arguments: ['summit_python']

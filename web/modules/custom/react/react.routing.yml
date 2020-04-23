@@ -1,0 +1,7 @@
+react.app:
+  path: '/analysis'
+  defaults:
+    _controller: '\Drupal\react\Controller\ReactController::content'
+    _title: 'Analyze Properties'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,20 @@
+
+
+.analysis-swiper {
+  height: 80vh;
+  width: 100%;
+  overflow-x: hidden;
+  .swiper-slide {
+    background: #eee;
+    //overflow-y: scroll;
+    &:nth-child(0) {
+      width: 30%;
+    }
+    &:nth-child(1) {
+      width: 40%;
+    }
+    &:nth-child(2) {
+      width: 35%;
+    }
+  }
+}

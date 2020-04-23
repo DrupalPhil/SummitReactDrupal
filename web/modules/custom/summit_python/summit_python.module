@@ -1,0 +1,99 @@
+<?php
+
+/**
+ * @file
+ * Contains summit_python.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function summit_python_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the summit_python module.
+    case 'help.page.summit_python':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function summit_python_preprocess(&$variables) {
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('kint')) {
+    kint_require();
+    Kint::$maxLevels = 3;
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function summit_python_cron() {
+
+  // TODO: Add config for this
+  // See: https://api.drupal.org/api/examples/cron_example%21cron_example.module/8.x-1.x
+
+  // Default to an hourly interval. Of course, cron has to be running at least
+  // hourly for this to work.
+  $interval = 3600;
+
+  //  $zillowQueue = \Drupal::service('summit_python.queue_rentals');
+  //  $zillowQueue->queueZillowRentals();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function summit_python_property_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->bundle() == 'property') {
+    // Geocode the address field and add the values
+    if ($entity instanceof \Drupal\node\NodeInterface) {
+      $geocodeService = \Drupal::service('summit_python.geocode_entity');
+      $entity = $geocodeService->geocodeNode($entity);
+    }
+  }
+
+  // TODO:
+  // If property passes all criteria, notify Phil & Jon
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function summit_python_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->bundle() == 'property') {
+    // Geocode the address field and add the values
+    if ($entity instanceof \Drupal\node\NodeInterface) {
+      $geocodeService = \Drupal::service('summit_python.geocode_entity');
+      $entity = $geocodeService->geocodeNode($entity);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function summit_python_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+
+//  kint($entity);
+
+//  if ($entity->field_street_name) {
+//    $geocoder = \Drupal::service('geocoder');
+//    $geocode = $geocoder->geocode($entity->get('field_address')->value, ['googlemaps']);
+//
+////      kint($entity->get('field_address')->value);
+//    kint($geocode->first());
+//    kint($geocode->first()->toArray());
+//  }
+
+}

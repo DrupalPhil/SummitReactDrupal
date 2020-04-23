@@ -1,0 +1,10 @@
+name: Summit
+type: theme
+base theme: classy
+description: 'Custom Theme'
+package: Core
+version: VERSION
+core: 8.x
+
+libraries:
+  - summit/summit

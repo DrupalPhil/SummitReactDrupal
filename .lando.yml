@@ -1,0 +1,8 @@
+name: summit-st
+recipe: drupal8
+config:
+  webroot: web
+  xdebug: false
+services:
+  phpmyadmin:
+    type: phpmyadmin

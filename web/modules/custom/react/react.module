@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Contains react.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function react_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the react module.
+    case 'help.page.react':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Responsible for everything React related') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function react_preprocess_page(&$variables) {
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('kint')) {
+    kint_require();
+    Kint::$maxLevels = 4;
+  }
+}
+
+/**
+ * Implements template_preprocess_node().
+ */
+function react_preprocess_node(array &$variables) {
+//  $node = $variables['node'];
+//  if ($node->bundle() == 'property') {
+//    $variables['#attached']['library'][] = 'react/react_app_dev';
+//  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function react_page_attachments_alter(array &$attachments) {
+  // Use the dev library if we're developing locally.
+//  if (in_array('react/react_app', $attachments['#attached']['library']) && file_exists(__DIR__ . '/js/dist_dev')) {
+//    $index = array_search('react/react_app', $attachments['#attached']['library']);
+//    $attachments['#attached']['library'][$index] = 'react/react_app_dev';
+//  }
+}

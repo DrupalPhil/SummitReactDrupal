@@ -1,0 +1,17 @@
+
+
+
+.list-group.draggable {
+  .list-group-item {
+    display: flex;
+    .dragHandle {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      i.fas {
+        width: 3em;
+        //text-align: center;
+      }
+    }
+  }
+}

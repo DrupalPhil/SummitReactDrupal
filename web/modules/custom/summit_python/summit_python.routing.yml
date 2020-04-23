@@ -1,0 +1,42 @@
+summit_python.queue_redfin_properties_form:
+  path: '/queue/redfin_properties'
+  defaults:
+    _form: '\Drupal\summit_python\Form\QueueRedfinPropertiesForm'
+    _title: 'Queue Redfin Properties'
+  requirements:
+    _access: 'TRUE'
+summit_python.queue_zillow_rentals_form:
+  path: '/queue/zillow_rentals'
+  defaults:
+    _form: '\Drupal\summit_python\Form\QueueZillowRentalsForm'
+    _title: 'Queue Zillow Rentals'
+  requirements:
+    _access: 'TRUE'
+summit_python.process_redfin_properties_form:
+  path: '/process/redfin_properties'
+  defaults:
+    _form: '\Drupal\summit_python\Form\ProcessRedfinPropertiesForm'
+    _title: 'Process Redfin Properties'
+  requirements:
+    _access: 'TRUE'
+summit_python.process_zillow_rentals_form:
+  path: '/process/zillow_rentals'
+  defaults:
+    _form: '\Drupal\summit_python\Form\ProcessZillowRentalsForm'
+    _title: 'Process Zillow Rentals'
+  requirements:
+    _access: 'TRUE'
+summit_python.process_properties_form:
+  path: 'queue/form/process-properties'
+  defaults:
+    _form: '\Drupal\summit_python\Form\ProcessPropertiesForm'
+    _title: 'Process Properties'
+  requirements:
+    _access: 'TRUE'
+summit_python.import_single_redfin_property:
+  path: 'import/redfin/property'
+  defaults:
+    _form: '\Drupal\summit_python\Form\ImportSingleRedfinProperty'
+    _title: 'ImportSingleRedfinProperty'
+  requirements:
+    _access: 'TRUE'
