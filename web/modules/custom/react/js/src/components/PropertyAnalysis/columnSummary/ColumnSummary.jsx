@@ -9,7 +9,7 @@ class ColumnSummary extends Component {
   }
 
   componentDidUpdate() {
-    // console.log('[ColumnSummary.jsx] componentDidUpdate', this.props);
+    console.log('[ColumnSummary.jsx] componentDidUpdate', this.props);
   }
 
   render() {

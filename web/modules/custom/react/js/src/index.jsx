@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PropertyAnalysisBase from './components/PropertyAnalysis/PropertyAnalysisBase';
+import PropertyAnalysisBase from './PropertyAnalysis/PropertyAnalysisBase';
 
 // ReactDOM.render(
 //   <Analysis name={'React Play'} />,

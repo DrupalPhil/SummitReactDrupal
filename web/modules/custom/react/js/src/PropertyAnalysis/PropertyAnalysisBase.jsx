@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -9,7 +9,6 @@ import PropertyAnalysis from './PropertyAnalysis';
 import {Route, Link, BrowserRouter as Router} from 'react-router-dom';
 import {HashRouter} from 'react-router-dom';
 import allReducers from './store/allReducers';
-import Layout from './Layout';
 
 
 // Middleware enhancer

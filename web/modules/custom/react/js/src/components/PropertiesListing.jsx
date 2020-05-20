@@ -5,11 +5,11 @@ import {dollarFormat} from '../utilityFilters';
 class PropertiesListing extends Component {
 
   componentDidMount() {
-    // console.log('[PropertiesListing.jsx] componentDidMount', this.props);
+    console.log('[PropertiesListing.jsx] componentDidMount', this.props);
   }
 
   componentDidUpdate() {
-    // console.log('[PropertiesListing.jsx] componentDidUpdate', this.props);
+    console.log('[PropertiesListing.jsx] componentDidUpdate', this.props);
   }
 
   selectProperty = (item) => {

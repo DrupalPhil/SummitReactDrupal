@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import * as actionCreators from './store/allCreators';
 import withSizes from 'react-sizes';
 import * as vw from './store/utilities';
-import Zillow from '../../zillow/Zillow';
-import Layout from './Layout';
+import Zillow from '../zillow/Zillow';
+import Layout from '../components/PropertyAnalysis/Layout';
 
 const mapStateToProps = state => {
   return {state};

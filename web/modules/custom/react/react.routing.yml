@@ -1,5 +1,5 @@
 react.app:
-  path: '/analysis'
+  path: '/analysis/'
   defaults:
     _controller: '\Drupal\react\Controller\ReactController::content'
     _title: 'Analyze Properties'
